@@ -1,0 +1,14 @@
+# Per-OS / runtime state — never track
+elpa/
+eln-cache/
+backup/
+auto-save-list/
+eshell/
+history
+places
+smex-items
+.emacs.desktop
+*~
+
+# Per-machine override
+local.el
