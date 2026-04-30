@@ -61,6 +61,10 @@
 ;; Allow quitting emacs without annoying confirmation.
 (setq confirm-kill-processes nil)
 
+;; Require confirmation before killing the daemon (C-x C-c in an emacsclient
+;; frame would otherwise silently kill the server and all frames).
+(setq confirm-kill-emacs 'yes-or-no-p)
+
 (load "~/.emacs.d/init.d/appearance");
 (load "~/.emacs.d/init.d/revert-all-file-buffers")
 (load "~/.emacs.d/init.d/melpa")
