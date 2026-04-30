@@ -15,6 +15,9 @@
 
 ;; (set-frame-font "Liberation Mono 10" nil t)
 
+;; Cascadia Code as default font — set via default-frame-alist so emacsclient frames inherit it.
+(add-to-list 'default-frame-alist '(font . "Cascadia Code-10"))
+
 ;; Use Segoe UI Emoji for emoji/symbol characters that Cascadia Code doesn't cover.
 (set-fontset-font t '(#x2600 . #x27BF) (font-spec :family "Segoe UI Emoji") nil 'prepend)  ; Misc Symbols + Dingbats
 (set-fontset-font t '(#x1F300 . #x1FAFF) (font-spec :family "Segoe UI Emoji") nil 'prepend) ; Emoji block

@@ -159,7 +159,6 @@
 (diminish 'eldoc-mode)
 
 ;; (set-face-attribute 'default nil :height 90)
-(set-face-attribute 'default nil :font "Cascadia Code-10")
 (desktop-save-mode 1)
 (require 'dired-x)
 
