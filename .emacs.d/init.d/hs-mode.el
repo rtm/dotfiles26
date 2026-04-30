@@ -6,4 +6,4 @@
 ;; where x is code, comments, t (both), or nil (neither)
 (setq hs-isearch-open t)
 
-(add-hook `typescript-mode-hook 'hs-minor-mode)
+(add-hook 'typescript-mode-hook 'hs-minor-mode)

@@ -1,12 +1,10 @@
 (use-package obsidian
   :ensure t
-  :demand t
   :config
-  (obsidian-specify-path "/mnt/c/Users/User/OneDrive/rtm/notes/Vault")
-  (global-obsidian-mode t)
+  (obsidian-specify-path "/mnt/c/Users/User/Documents/Obsidian/Vault")
   :custom
   ;; This directory will be used for `obsidian-capture' if set.
-  (obsidian-inbox-directory "Zettelkasten/Fleeting")
+  (obsidian-inbox-directory "Zettelkasten/Fleeting Notes/emacs-capture")
   ;; Create missing files in inbox? - when clicking on a wiki link
   ;; t: in inbox, nil: next to the file with the link
   ;; default: t
