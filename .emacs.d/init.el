@@ -25,7 +25,7 @@
 
 (setq dired-auto-revert-buffer t)
 (setq dired-listing-switches "-alhv")
-(setq dired-recurisve-copies 'always)
+(setq dired-recursive-copies 'always)
 (setq dired-dwim-target t)
 (setq require-final-newline t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -88,7 +88,10 @@
   (interactive)
   (let ((inhibit-read-only t))
     (ansi-color-apply-on-region (point-min) (point-max))))
-(add-to-list 'auto-mode-alist '("\\.log\\'" . display-ansi-colors))
+(add-hook 'find-file-hook
+          (lambda ()
+            (when (and (buffer-file-name) (string-match "\\.log\\'" (buffer-file-name)))
+              (display-ansi-colors))))
 
 ;; Find file at point, remaps C-x C-f etc.
 (ffap-bindings)
@@ -153,18 +156,12 @@
 (diminish 'editorconfig-mode)
 (diminish 'eldoc-mode)
 
-(set-face-attribute 'default nil :height 90)
+;; (set-face-attribute 'default nil :height 90)
+(set-face-attribute 'default nil :font "Cascadia Code-10")
 (desktop-save-mode 1)
-(savehist-mode 1)
 (require 'dired-x)
 
 (setq grep-highlight-matches t)
-
-;; turn off abbrevs, which cause some weird problem.
-(setq save-abbrevs 'silently)
-
-;; go ahead and edit git files via symbolic links
-(setq vc-follow-symlinks t)
 
 ;; ;; Make URLs clickable everywhere.
 (add-hook 'after-init-hook #'global-goto-address-mode)

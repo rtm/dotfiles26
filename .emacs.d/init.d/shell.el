@@ -49,7 +49,7 @@
   pwd)))
 
 ;; eshell prompt
-(defvar eshell-prompt-function
+(setq eshell-prompt-function
       (lambda ()
         (concat
          (propertize ((lambda (p-lst)
@@ -71,7 +71,7 @@
          (or "")
          (propertize " # " 'face 'default))))
 
-(defvar eshell-highlight-prompt nil)
+(setq eshell-highlight-prompt nil)
 
 ;; (use-package load-bash-alias
 ;;   :ensure t
